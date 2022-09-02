@@ -32,8 +32,8 @@ class Birds(Animals):
         print(f'Швидкість пташки ==> {self.speed}')
 
 
-cat = Birds(input('Введіть ім\'я пташки ==> '), int(input('Введіть вік пташки ==> ')),
-            input('Введіть колір пташки ==> '), int(input('Введіть швидкість пташки ==> ')))
+cat = Birds(input('Введіть ім\'я ==> '), int(input('Введіть вік ==> ')), input('Введіть колір ==> '),
+            int(input('Введіть швидкість ==> ')))
 cat.get_name()
 cat.get_age()
 cat.get_colour()
