@@ -1,40 +1,33 @@
-class Animals:
-    def __init__(self, name, age, colour):
-        self.name = name
-        self.age = age
-        self.colour = colour
+name_list = []
+word_list = []
 
-    def get_name(self):
-        print(f'Ім\'я собаки ==> {self.name}')
-
-    def get_age(self):
-        print(f'Вік собаки ==> {self.age}')
-
-    def get_colour(self):
-        print(f'Колір собаки ==> {self.colour}')
+name = None
 
 
-class Birds(Animals):
-    def __init__(self, name, age, colour, speed):
-        super().__init__(name, age, colour)
-        self.speed = speed
-
-    def get_name(self):
-        print(f'Ім\'я пташки ==> {self.name}')
-
-    def get_age(self):
-        print(f'Вік пташки ==> {self.age}')
-
-    def get_colour(self):
-        print(f'Колір пташки ==> {self.colour}')
-
-    def get_speed(self):
-        print(f'Швидкість пташки ==> {self.speed}')
+def player_name():
+    while True:
+        name = input('Введіть імя')
+        if name == 'Start':
+            break
+        else:
+            name_list.append(name)
 
 
-cat = Birds(input('Введіть ім\'я ==> '), int(input('Введіть вік ==> ')), input('Введіть колір ==> '),
-            int(input('Введіть швидкість ==> ')))
-cat.get_name()
-cat.get_age()
-cat.get_colour()
-cat.get_speed()
+def func():
+    while True:
+        for i in name_list:
+            slovo = input(f'{i}, введи будь ласка слово')
+            while slovo in word_list:
+                if slovo in word_list:
+                    print('це слово вже використовувалось, введіть інше')
+                    slovo = input(f'{i}, введи будь ласка слово')
+                else:
+                    word_list.append(slovo)
+                    break
+
+            word_list.append(slovo)
+
+
+player_name()
+func()
+print(name_list, word_list)
